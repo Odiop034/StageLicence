@@ -1,5 +1,6 @@
 const express = require('express');
-const Utilisateur = require('../models/Utilisateur');
+
+const CrtlUser =require('../controllers/utilisateur')
 const router = express.Router();
 
 // Ajouter un utilisateur

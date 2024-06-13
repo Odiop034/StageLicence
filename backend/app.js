@@ -12,11 +12,12 @@ const niveauRoutes = require('./routes/niveau');
 const app = express();
 app.use(express.json());
 
-mongoose.connect('mongodb+srv://od14034:Omardiop034@cluster0.7lymngg.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0',
-  { useNewUrlParser: true,
-    useUnifiedTopology: true })
-  .then(() => console.log('Connexion à MongoDB réussie !'))
-  .catch(() => console.log('Connexion à MongoDB échouée !'));
+mongoose.connect('mongodb://localhost:27017/Backend', {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+})
+.then(() => console.log('Connexion à MongoDB réussie !'))
+.catch((err) => console.error('Connexion à MongoDB échouée !', err));
 
   app.use('/api/utilisateurs', utilisateurRoutes);
   app.use('/api/ressources', ressourceRoutes);
